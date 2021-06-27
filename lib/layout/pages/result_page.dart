@@ -1,19 +1,16 @@
 import 'package:bmi_calculator_reworked/layout/widgets/bottom_button.dart';
-import 'package:bmi_calculator_reworked/layout/widgets/cards.dart';
+import 'package:bmi_calculator_reworked/layout/widgets/card_container.dart';
 import 'package:flutter/material.dart';
 
-class Homepage extends StatelessWidget {
+class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Cards(),
-        BottomButton(
-          text: 'CALCULATE YOUR BMI',
-          callback: () {},
-        ),
+        CardContainer(),
+        BottomButton(text: 'RECALCULATE YOUR BMI', callback: () {}),
       ],
     );
   }

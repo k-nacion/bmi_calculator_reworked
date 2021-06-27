@@ -3,6 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomButton extends StatelessWidget {
+  final Function? callback;
+  final String text;
+
+  BottomButton({this.callback, required this.text});
+
+  bool isEnabled() => callback != null;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -10,7 +17,8 @@ class BottomButton extends StatelessWidget {
       child: Container(
         height: 70,
         decoration: BoxDecoration(
-          border: Border.all(width: 3, style: BorderStyle.solid),
+          border: Border.all(
+              width: 3, style: BorderStyle.solid, color: isEnabled() ? Colors.black : Colors.grey),
           borderRadius: BorderRadius.circular(8),
           color: ThemeColor.ACCENT_COLOR,
         ),
@@ -18,11 +26,12 @@ class BottomButton extends StatelessWidget {
           color: Colors.transparent,
           child: InkWell(
             splashColor: Colors.black26,
-            onTap: () {},
+            onTap: isEnabled() ? () => callback!() : null,
             child: Center(
               child: Text(
-                'CALCULATE YOUR BMI',
-                style: TextStyle(fontWeight: FontWeight.bold),
+                text,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: isEnabled() ? Colors.black : Colors.grey),
               ),
             ),
           ),

@@ -3,15 +3,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HeightCard extends StatefulWidget {
-  double heightValue;
+  final double initialHeight;
+  final double minHeightValue;
+  final double maxHeightValue;
 
-  HeightCard({required this.heightValue});
+  HeightCard(
+      {required this.initialHeight, required this.minHeightValue, required this.maxHeightValue});
 
   @override
-  _HeightCardState createState() => _HeightCardState();
+  _HeightCardState createState() => _HeightCardState(initialHeight);
 }
 
 class _HeightCardState extends State<HeightCard> {
+  double _heightValue;
+
+  _HeightCardState(this._heightValue);
+
   @override
   Widget build(BuildContext context) {
     return CardContainer(
@@ -28,7 +35,7 @@ class _HeightCardState extends State<HeightCard> {
             crossAxisAlignment: CrossAxisAlignment.baseline,
             textBaseline: TextBaseline.alphabetic,
             children: [
-              Text(widget.heightValue.toStringAsFixed(0),
+              Text(_heightValue.toStringAsFixed(0),
                   style: Theme.of(context)
                       .textTheme
                       .headline3!
@@ -43,12 +50,12 @@ class _HeightCardState extends State<HeightCard> {
             ],
           ),
           Slider(
-            value: widget.heightValue,
+            value: _heightValue,
             onChanged: (value) => setState(() {
-              widget.heightValue = value;
+              _heightValue = value;
             }),
-            min: 30,
-            max: 250,
+            min: widget.minHeightValue,
+            max: widget.maxHeightValue,
           ),
         ],
       ),

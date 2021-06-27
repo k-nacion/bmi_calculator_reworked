@@ -11,9 +11,7 @@ class Cards extends StatelessWidget {
       child: Column(
         children: [
           GenderCards(),
-          HeightCard(
-            heightValue: 190,
-          ),
+          HeightCard(initialHeight: 190, minHeightValue: 110, maxHeightValue: 250),
           Expanded(
             child: Row(
               children: [
