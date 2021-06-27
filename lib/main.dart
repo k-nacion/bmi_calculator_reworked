@@ -1,8 +1,10 @@
 import 'package:bmi_calculator_reworked/layout/pages/homepages.dart';
-import 'package:bmi_calculator_reworked/util/app_bar.dart';
+import 'package:bmi_calculator_reworked/layout/pages/result_page.dart';
 import 'package:bmi_calculator_reworked/util/theme/Theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'util/constants/Routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,12 +19,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: generateTheme(context),
-      home: Builder(
-        builder: (BuildContext ctx) => Scaffold(
-          appBar: generateAppBar(ctx),
-          body: Homepage(),
-        ),
-      ),
+      initialRoute: Routes.home,
+      routes: {
+        Routes.home: (context) => Homepage(),
+        Routes.result: (context) => ResultPage(),
+      },
     );
   }
 }

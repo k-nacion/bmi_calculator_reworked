@@ -73,9 +73,11 @@ class _CounterCardState extends State<CounterCard> {
                 shape: CircleBorder(side: BorderSide(width: 2.3, color: Colors.black54)),
                 elevation: 0,
                 splashColor: lightSplashColor,
+                heroTag: null,
               ),
               SizedBox(width: 8),
               FloatingActionButton(
+                heroTag: null,
                 onPressed: () => setState(() => _value++),
                 child: Icon(
                   FontAwesomeIcons.plus,
