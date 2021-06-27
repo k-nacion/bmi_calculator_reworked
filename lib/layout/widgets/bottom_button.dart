@@ -25,7 +25,7 @@ class BottomButton extends StatelessWidget {
         child: Material(
           color: Colors.transparent,
           child: InkWell(
-            splashColor: Colors.black26,
+            splashColor: darkSplashColor,
             onTap: isEnabled() ? () => callback!() : null,
             child: Center(
               child: Text(

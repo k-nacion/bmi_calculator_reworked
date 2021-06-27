@@ -11,3 +11,6 @@ class ThemeColor {
   static const URANIAN_BLUE = Color(0xFFBDE0FE);
   static const BABY_BLUE_EYES = Color(0xFFA2D2FF);
 }
+
+const darkSplashColor = Colors.black26;
+const lightSplashColor = Colors.white54;
