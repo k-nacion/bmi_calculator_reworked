@@ -8,7 +8,7 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: generateAppBar(context, 'BMI CALCULATOR'),
+      appBar: generateAppBar(context),
       body: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,

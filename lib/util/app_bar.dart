@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 AppBar generateAppBar(
-  BuildContext context,
-  String title, {
+  BuildContext context, {
+  String title = 'BMI CALCULATOR',
   bool? centerTitle = true,
   double? fontSize,
   FontWeight? fontWeight = FontWeight.bold,

@@ -15,6 +15,7 @@ ThemeData generateTheme(BuildContext? ctx) {
     appBarTheme: baseTheme.appBarTheme.copyWith(
       textTheme: baseTheme.textTheme.apply(fontFamily: ThemeTypography.FONT_FAMILY),
       titleTextStyle: TextStyle(fontWeight: FontWeight.bold),
+      iconTheme: IconThemeData(color: Colors.black),
     ),
     sliderTheme: baseTheme.sliderTheme.copyWith(
       activeTrackColor: ThemeColor.ACCENT_COLOR,
