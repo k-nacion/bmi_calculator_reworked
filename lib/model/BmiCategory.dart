@@ -1,0 +1,1 @@
+enum BmiCategory { UNDERWEIGHT, NORMAL, OVERWEIGHT, OBESE }

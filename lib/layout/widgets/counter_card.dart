@@ -10,14 +10,16 @@ class CounterCard extends StatefulWidget {
   final double initialValue;
   final bool hasUnits;
   final String? units;
+  final Map<String, dynamic>? args;
 
-  CounterCard(
-      {Key? key,
-      required this.label,
-      required this.initialValue,
-      this.hasUnits = false,
-      this.units})
-      : super(key: key);
+  CounterCard({
+    Key? key,
+    required this.label,
+    required this.initialValue,
+    this.hasUnits = false,
+    this.units,
+    this.args,
+  }) : super(key: key);
 
   @override
   _CounterCardState createState() => _CounterCardState(initialValue);
@@ -64,7 +66,10 @@ class _CounterCardState extends State<CounterCard> {
             mainAxisSize: MainAxisSize.min,
             children: [
               FloatingActionButton(
-                onPressed: () => setState(() => _value--),
+                onPressed: () => setState(() {
+                  _value--;
+                  widget.args!['setWeight'](_value);
+                }),
                 child: Icon(
                   FontAwesomeIcons.minus,
                   color: Colors.black,
@@ -78,7 +83,10 @@ class _CounterCardState extends State<CounterCard> {
               SizedBox(width: 8),
               FloatingActionButton(
                 heroTag: null,
-                onPressed: () => setState(() => _value++),
+                onPressed: () => setState(() {
+                  _value++;
+                  widget.args!['setWeight'](_value);
+                }),
                 child: Icon(
                   FontAwesomeIcons.plus,
                   color: Colors.black,

@@ -3,18 +3,16 @@ import 'package:flutter/material.dart';
 
 AppBar generateAppBar(
   BuildContext context, {
-  String title = 'BMI CALCULATOR',
+  String textTitle = 'BMI CALCULATOR',
   bool? centerTitle = true,
   double? fontSize,
   FontWeight? fontWeight = FontWeight.bold,
 }) {
-  var appTitle = title;
-
   return AppBar(
     elevation: 0,
     centerTitle: centerTitle,
     title: Text(
-      appTitle,
+      textTitle,
       style: TextStyle(
           fontWeight: fontWeight,
           fontSize:

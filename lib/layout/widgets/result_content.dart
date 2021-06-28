@@ -1,12 +1,11 @@
+import 'package:bmi_calculator_reworked/controller/bmi_calculator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ResultContent extends StatelessWidget {
-  final double bmiValue;
-  late final String bmiDescriptive;
-  late final String description;
+  final BmiCalculator bmiResult;
 
-  ResultContent({required this.bmiValue});
+  ResultContent({required this.bmiResult});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +15,8 @@ class ResultContent extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          BmiDescriptive(),
-          BmiNumerical(bmiValue),
+          BmiDescriptive(bmiResult.category),
+          BmiNumerical(bmiResult.bmi),
           BmiDescription(),
         ],
       ),
@@ -26,10 +25,13 @@ class ResultContent extends StatelessWidget {
 }
 
 class BmiDescriptive extends StatelessWidget {
+  final String category;
+
+  BmiDescriptive(this.category);
   @override
   Widget build(BuildContext context) {
     return Text(
-      'OVERWEIGHT',
+      category,
       style: Theme.of(context)
           .textTheme
           .button!

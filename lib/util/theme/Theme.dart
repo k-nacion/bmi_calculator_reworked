@@ -18,9 +18,9 @@ ThemeData generateTheme(BuildContext? ctx) {
       iconTheme: IconThemeData(color: Colors.black),
     ),
     sliderTheme: baseTheme.sliderTheme.copyWith(
-      activeTrackColor: ThemeColor.ACCENT_COLOR,
+      activeTrackColor: ThemeColor.LAVENDER,
       inactiveTrackColor: ThemeColor.LAVENDER,
-      thumbColor: ThemeColor.PRIMARY_COLOR,
+      thumbColor: ThemeColor.ACCENT_COLOR,
     ),
   );
 }
